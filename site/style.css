@@ -1,0 +1,30 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fafaf9; --fg: #1c1917; --muted: #57534e; --line: #d6d3d1;
+  --accent: #0f766e; --accent-fg: #fff; --bubble: #f0efed; --cloud: #b45309;
+  font: 16px/1.5 system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1c1917; --fg: #f5f5f4; --muted: #a8a29e; --line: #44403c; --accent: #2dd4bf; --accent-fg: #042f2e; --bubble: #292524; --cloud: #fbbf24; }
+}
+body { margin: 0; background: var(--bg); color: var(--fg); }
+main { max-width: 42rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+a { color: var(--accent); }
+h1 { font-size: 1.6rem; margin: .5rem 0; }
+.verdict { padding: .75rem 1rem; border: 1px solid var(--line); border-radius: .5rem; }
+.buttons { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: 1rem 0 .25rem; }
+button { font: inherit; padding: .55rem 1rem; border-radius: .5rem; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-fg); cursor: pointer; }
+button.secondary { background: transparent; color: var(--accent); }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, textarea:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.note, .status, .models span { color: var(--muted); font-size: .9rem; }
+.where { font-weight: 600; }
+.where[data-mode="local"] { color: var(--accent); }
+.where[data-mode="cloud"] { color: var(--cloud); }
+.chat { display: flex; flex-direction: column; gap: .5rem; margin: 1rem 0; }
+.msg { margin: 0; padding: .6rem .85rem; border-radius: .6rem; background: var(--bubble); white-space: pre-wrap; overflow-wrap: anywhere; }
+.msg.user { align-self: flex-end; background: var(--accent); color: var(--accent-fg); max-width: 85%; }
+form { display: flex; gap: .5rem; }
+textarea { flex: 1; font: inherit; padding: .5rem; border-radius: .5rem; border: 1px solid var(--line); background: transparent; color: inherit; resize: vertical; }
+.models { padding-left: 1.2rem; }
+.models li { margin: .5rem 0; }

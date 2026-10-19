@@ -1,0 +1,4 @@
+# Hugging Face rejects model downloads whose Referer is a *.workers.dev page (verified 2026-10-20).
+# Applies to the pages and to lib/llm-worker.js, so WebLLM's in-worker downloads are covered too.
+/*
+  Referrer-Policy: no-referrer

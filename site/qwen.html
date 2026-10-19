@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qwen3 0.6B in your browser</title>
+<link rel="stylesheet" href="/style.css">
+<script type="module">
+  import { chatPage } from '/lib/chat.js';
+  chatPage({
+    page: 'qwen',
+    title: 'Qwen3 0.6B chat',
+    blurb: 'A small chat model that runs in your browser on your own GPU. No install, no account.',
+    model: { sizeMB: 350, mobileOk: true },
+    ids: { f16: 'Qwen3-0.6B-q4f16_1-MLC', f32: 'Qwen3-0.6B-q4f32_1-MLC' },
+    extraBody: { enable_thinking: false },
+  });
+</script>
+</head>
+<body></body>
+</html>

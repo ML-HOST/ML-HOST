@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whisper speech to text in your browser</title>
+<link rel="stylesheet" href="/style.css">
+<script type="module">
+  import { whisperPage } from '/lib/whisper.js';
+  whisperPage({
+    page: 'whisper',
+    title: 'Whisper small: speech to text',
+    blurb: 'Record or pick an audio clip (up to 55 seconds) and turn it into text on your own device.',
+    model: { sizeMB: 400, mobileOk: false },
+  });
+</script>
+</head>
+<body></body>
+</html>

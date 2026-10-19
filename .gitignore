@@ -1,0 +1,14 @@
+# Secrets: none today. These lines stop one from ever being pushed by accident.
+.env
+.env.*
+.dev.vars*
+
+# Planning docs stay local
+docs/
+
+# Wrangler's local state (local test database, account cache)
+.wrangler/
+
+# Generated graph output, not source
+graphify-out/
+useful_repo/

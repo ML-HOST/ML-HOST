@@ -1,0 +1,23 @@
+name = "locallink-try"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+
+# The Worker serves the static pages and only runs for paths with no matching file (/api/*).
+[assets]
+directory = "../site"
+
+
+[[d1_databases]]
+binding = "DB"
+database_name = "locallink-try"
+database_id = "REPLACE_AFTER_wrangler_d1_create"
+
+# Per-IP limit on cloud calls.
+[[ratelimits]]
+name = "PER_IP"
+namespace_id = "1001"
+simple = { limit = 10, period = 60 }
+
+[vars]
+# Hard cap on cloud calls per UTC day, across all three pages.
+DAILY_CAP = "2"
