@@ -13,10 +13,10 @@ a { color: var(--accent); }
 h1 { font-size: 1.6rem; margin: .5rem 0; }
 .verdict { padding: .75rem 1rem; border: 1px solid var(--line); border-radius: .5rem; }
 .buttons { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: 1rem 0 .25rem; }
-button { font: inherit; padding: .55rem 1rem; border-radius: .5rem; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-fg); cursor: pointer; }
-button.secondary { background: transparent; color: var(--accent); }
+button, .button { font: inherit; display: inline-block; text-decoration: none; padding: .55rem 1rem; border-radius: .5rem; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-fg); cursor: pointer; }
+button.secondary, .button.secondary { background: transparent; color: var(--accent); }
 button:disabled { opacity: .45; cursor: default; }
-button:focus-visible, textarea:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button:focus-visible, .button:focus-visible, textarea:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .note, .status, .models span { color: var(--muted); font-size: .9rem; }
 .where { font-weight: 600; }
 .where[data-mode="local"] { color: var(--accent); }

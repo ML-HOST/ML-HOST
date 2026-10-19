@@ -5,7 +5,7 @@ const MAX_CHAT_CHARS = 8000;
 
 const ENUMS = {
   page: ['qwen', 'llama', 'whisper'],
-  type: ['page_view', 'check_done', 'load_start', 'load_done', 'run_done', 'error', 'cloud_call'],
+  type: ['page_view', 'check_done', 'load_start', 'load_done', 'run_done', 'error', 'cloud_call', 'colab_open'],
   device_class: ['mobile', 'desktop'],
   verdict: ['LOCAL', 'LOCAL_SMALLER', 'CLOUD_ONLY'],
   mode: ['local', 'cloud'],

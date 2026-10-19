@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS events (
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   session_id TEXT,
   page TEXT NOT NULL,          -- qwen | llama | whisper
-  type TEXT NOT NULL,          -- page_view | check_done | load_start | load_done | run_done | error | cloud_call
+  type TEXT NOT NULL,          -- page_view | check_done | load_start | load_done | run_done | error | cloud_call | colab_open
   device_class TEXT,           -- mobile | desktop
   webgpu INTEGER,              -- 0/1
   gpu_vendor TEXT,

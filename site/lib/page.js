@@ -8,6 +8,8 @@ export function el(tag, props = {}, ...kids) {
   return e;
 }
 
+const COLAB = 'https://colab.research.google.com/github/ML-HOST/ML-HOST/blob/main/notebooks';
+
 const MESSAGES = {
   oom: 'This model is too big for your device. Try the smaller version or run on cloud.',
   device_lost: 'Your GPU stopped responding. Try cloud, or reload the page.',
@@ -49,6 +51,11 @@ export async function frame(cfg) {
   const verdict = el('p', { className: 'verdict', textContent: 'Checking your device…' });
   const localBtn = el('button', { textContent: 'Run on my device', disabled: true });
   const cloudBtn = el('button', { textContent: 'Run on cloud', className: 'secondary' });
+  // Runs on Google's GPU in the visitor's own Google account; they chat inside Colab (its rules forbid driving it from our page).
+  const colab = el('a', {
+    className: 'button secondary', target: '_blank', rel: 'noopener', textContent: 'Run in my Google Colab',
+    href: `${COLAB}/${cfg.page}.ipynb`, onclick: () => ev('colab_open'),
+  });
   const where = el('p', { className: 'where', textContent: 'Not running yet' });
   const status = el('p', { className: 'status', role: 'status' });
   const app = el('section', { hidden: true });
@@ -58,8 +65,9 @@ export async function frame(cfg) {
       el('h1', { textContent: cfg.title }),
       el('p', { textContent: cfg.blurb }),
       verdict,
-      el('div', { className: 'buttons' }, localBtn, cloudBtn),
+      el('div', { className: 'buttons' }, localBtn, cloudBtn, colab),
       el('p', { className: 'note', textContent: cfg.cloudNote }),
+      el('p', { className: 'note', textContent: 'Google Colab opens a notebook that runs the same model on Google\'s free GPU in your own Google account, and can keep it in your Google Drive. You chat inside Colab.' }),
       where, status, app),
   );
 

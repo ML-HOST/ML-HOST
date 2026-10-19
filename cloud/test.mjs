@@ -16,6 +16,7 @@ assert.equal(dirty.load_ms, 1200);
 assert.equal('prompt' in dirty || 'ip' in dirty, false);
 assert.equal(cleanEvent({ page: 'other', type: 'run_done' }), null);
 assert.equal(cleanEvent({ page: 'qwen', type: 'hack' }), null);
+assert.equal(cleanEvent({ page: 'llama', type: 'colab_open' }).type, 'colab_open');
 assert.equal(cleanEvent({ page: 'qwen', type: 'error', load_ms: -1, verdict: 'X' }).load_ms, null);
 
 // Device check rules (try.md + TRD FR15).
